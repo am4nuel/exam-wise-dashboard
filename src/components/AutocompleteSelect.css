@@ -1,0 +1,230 @@
+.autocomplete-select {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.autocomplete-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.required-mark {
+  color: #ef4444;
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.autocomplete-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.autocomplete-input-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-accent) !important;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: text;
+  transition: all 0.2s ease;
+  min-height: 46px;
+}
+
+.autocomplete-input-container:hover {
+  border-color: var(--text-secondary);
+  background: var(--bg-secondary) !important;
+}
+
+.autocomplete-input-container:focus-within {
+  border-color: var(--primary-color);
+  background: var(--bg-secondary) !important;
+  box-shadow: 0 0 0 3px var(--bg-accent);
+}
+
+.autocomplete-select.disabled .autocomplete-input-container {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--bg-accent) !important;
+}
+
+.autocomplete-select.error .autocomplete-input-container {
+  border-color: #ef4444;
+}
+
+.search-icon {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.autocomplete-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  min-width: 0;
+  padding: 0;
+}
+
+.autocomplete-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.autocomplete-input:disabled {
+  cursor: not-allowed;
+}
+
+.autocomplete-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.dropdown-icon {
+  color: var(--text-secondary);
+  transition: transform 0.2s ease;
+  opacity: 0.6;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.loading-spinner {
+  color: var(--primary-color);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.autocomplete-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 1001;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.autocomplete-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+.autocomplete-option {
+  padding: 12px 16px;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: all 0.15s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.autocomplete-option:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-option:hover,
+.autocomplete-option.highlighted {
+  background: var(--bg-accent);
+  color: var(--primary-color);
+}
+
+.autocomplete-option.selected {
+  background: var(--bg-accent);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.autocomplete-option mark {
+  background: rgba(79, 70, 229, 0.2);
+  color: var(--primary-color);
+  padding: 1px 0;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+.autocomplete-loading,
+.autocomplete-empty {
+  padding: 20px 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.autocomplete-error {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: 4px;
+  font-weight: 500;
+}

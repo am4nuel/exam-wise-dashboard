@@ -1,0 +1,220 @@
+.bank-management {
+  display: flex !important;
+  flex-direction: column;
+  gap: 24px;
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+/* Custom Scrollbar */
+.bank-management::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bank-management::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bank-management::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+.bank-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .bank-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bank-form-card, .bank-list-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.bank-form-card h4, .bank-list-card h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cancel-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* List Items */
+.banks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bank-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  transition: all 0.2s;
+}
+
+.bank-item:hover {
+  border-color: var(--primary-color);
+}
+
+.bank-item.inactive {
+  opacity: 0.7;
+}
+
+.bank-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--primary-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bank-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.bank-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inactive-badge {
+  font-size: 10px;
+  background: var(--gray-200);
+  color: var(--text-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.bank-acc-num {
+  font-family: monospace;
+  color: var(--text-primary);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.bank-acc-name {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.bank-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn.edit {
+  background: var(--blue-light);
+  color: var(--blue-dark);
+}
+
+.action-btn.edit:hover {
+  background: var(--blue-med);
+}
+
+.action-btn.delete {
+  background: var(--red-light);
+  color: var(--red-dark);
+}
+
+.action-btn.delete:hover {
+  background: var(--red-med);
+}
+
+.error-banner {
+  background: var(--red-light);
+  color: var(--red-dark);
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.retry-btn {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid var(--red-dark);
+  color: var(--red-dark);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}

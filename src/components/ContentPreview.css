@@ -1,0 +1,116 @@
+.content-preview-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--bg-accent);
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.preview-content {
+  padding: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* PPTX HTML Preview Styles (matching Flutter app) */
+.pptx-html-preview {
+  font-family: sans-serif;
+}
+
+.pptx-html-preview .slide {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pptx-html-preview .slide-number {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pptx-html-preview p {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+}
+
+.pptx-html-preview img {
+  display: block;
+  margin: 16px auto;
+  max-width: 100%;
+  height: auto;
+  background-color: #f5f5f5;
+}
+
+.pptx-html-preview b, .pptx-html-preview strong {
+  font-weight: 600;
+}
+
+.pptx-html-preview i, .pptx-html-preview em {
+  font-style: italic;
+}
+
+.pptx-html-preview hr {
+  margin: 24px 0;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Base64 Image Preview */
+.base64-image-preview img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* LaTeX Preview */
+.latex-preview {
+  background: var(--bg-primary);
+  padding: 12px;
+  border-radius: 8px;
+  font-family: monospace;
+}
+
+.latex-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+/* Markdown Preview */
+.markdown-preview p {
+  margin-bottom: 1em;
+}
+
+.markdown-preview ul, .markdown-preview ol {
+  padding-left: 20px;
+  margin-bottom: 1em;
+}
+
+.markdown-preview h1, .markdown-preview h2, .markdown-preview h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
